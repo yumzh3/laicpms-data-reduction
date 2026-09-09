@@ -25,13 +25,4 @@ The narrated demonstration is streamed from YouTube on the published website. A 
 
 Open `index.html` directly in a browser. On this computer, the page uses the local MP4 because YouTube embeds require an HTTP referrer. After publication over HTTPS, it automatically displays the YouTube player instead.
 
-## Publish with GitHub Pages
-
-1. Create a GitHub repository for this project.
-2. Add the contents of this folder to the repository's `main` branch.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Select the `main` branch and the `/ (root)` folder, then save.
-6. Open the published URL and verify the video, links, and mobile layout.
-
 Future updates to the `main` branch will trigger a new GitHub Pages deployment while preserving the same public URL.

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A scientific software case study by Mingzhen Yu: a cross-platform LA-ICP-MS data reduction application built for reproducible laboratory workflows."
+    />
+    <meta name="theme-color" content="#08262b" />
+    <title>LA-ICP-MS Data Reduction | Mingzhen Yu</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Mingzhen Yu project home">
+        <span class="brand-mark" aria-hidden="true">MY</span>
+        <span class="brand-copy">
+          <strong>Mingzhen Yu</strong>
+          <small>Scientific software case study</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#challenge">Challenge</a>
+        <a href="#solution">Solution</a>
+        <a href="#demo">Demo</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero section-pad light-section">
+        <div class="hero-copy reveal">
+          <p class="eyebrow section-title"><span></span> LA-ICP-MS data reduction</p>
+          <p class="hero-lead">
+            I designed and developed a cross-platform desktop application that converts raw
+            LA-ICP-MS count files into configurable, reviewable, and export-ready results. It has
+            processed approximately 20,000 analyses and has been used for all LA-ICP-MS data
+            reduction in the lab since 2024.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#demo">Watch the demonstration</a>
+          </div>
+        </div>
+
+        <div class="scientific-background reveal">
+          <img class="method-sketch" src="assets/laicpms-data-flow-sketch-v3.png" alt="Hand-drawn diagram showing how a rock sample is measured by laser ablation ICP-MS, reduced using calibration and customized correction steps, and converted into compositional data." />
+          <div class="abstract-lines">
+            <a href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1744752" target="_blank" rel="noreferrer">Yu, Chen, and Langmuir — AGU 2024 abstract</a>
+            <a href="https://goldschmidtabstracts.info/2018/402.pdf" target="_blank" rel="noreferrer">Chen and Langmuir — Goldschmidt 2018 abstract</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="challenge" class="challenge section-pad light-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow section-title"><span></span> 01 · The challenge</p>
+          <h2 class="challenge-tagline">A customized method had no customized software.</h2>
+        </div>
+        <div class="problem-list reveal">
+          <article>
+            <span>01</span>
+            <div><h3>Workflow mismatch</h3><p>Existing programs did not support the laboratory’s customized data-reduction method.</p></div>
+          </article>
+          <article>
+            <span>02</span>
+            <div><h3>Manual variability</h3><p>Manual processing took half a day to a full day, depending on the researcher’s familiarity and tools. It was also difficult to standardize across users and cumbersome to repeat.</p></div>
+          </article>
+          <article>
+            <span>03</span>
+            <div><h3>Maintenance cost</h3><p>External software development would have been expensive and harder to maintain as scientific requirements evolved.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="solution" class="solution section-pad light-section">
+        <div class="solution-copy reveal">
+          <p class="eyebrow section-title"><span></span> 02 · The solution</p>
+          <p>
+            I designed the interface, implemented the reduction logic, connected configuration to
+            visual quality checks, and packaged the program so researchers could run it on macOS
+            or Windows without installing Python.
+          </p>
+          <p>
+            The result is a flexible tool that makes analytical choices visible, produces
+            consistent outputs, and can be maintained and debugged directly as laboratory needs
+            change. A data reduction that previously required half a day to a full day now takes
+            approximately 2–5 minutes.
+          </p>
+          <p>
+            To verify the function of the program, I manually reduced several analytical batches
+            and compared the results with the application output. The results were identical, and
+            the comparison was independently checked by another member of the lab.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="reveal">
+            <div class="capability-head"><span>01</span><h3>Guided configuration</h3></div>
+            <p>Researchers select standards, internal standards, isotopes, and calculation options through the interface.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>02</span><h3>Visual quality control</h3></div>
+            <p>Count-rate plots and calibration curves let users inspect data before accepting the final calculation.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>03</span><h3>Reproducible output</h3></div>
+            <p>The same structured process is applied across analyses, with raw and final tables available for review and export.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>04</span><h3>Cross-platform delivery</h3></div>
+            <p>The application is packaged for macOS and Windows so end users do not need a programming environment.</p>
+          </article>
+        </div>
+        <p class="solution-tech reveal">
+          The current application contains 2,844 lines of Python code and uses Tkinter, NumPy,
+          pandas, Matplotlib, SciPy, scikit-learn, Pillow, natsort, and adjustText. PyInstaller
+          packages the software as standalone macOS and Windows applications. The private source
+          code is available upon request.
+        </p>
+      </section>
+
+      <section id="demo" class="demo section-pad light-section">
+        <div class="demo-heading reveal">
+          <div class="section-heading">
+            <p class="eyebrow section-title"><span></span> 03 · Product demonstration</p>
+            <p class="demo-intro">
+              This narrated walkthrough follows a reduction session from data import through
+              calibration review and CSV export. Use the full-screen control for the clearest view
+              of interface details.
+            </p>
+          </div>
+        </div>
+
+        <div class="video-shell reveal">
+          <div class="video-topline">
+            <span><i></i> APPLICATION WALKTHROUGH</span>
+            <span>Audio narration included</span>
+          </div>
+          <iframe
+            class="youtube-demo"
+            src="https://www.youtube-nocookie.com/embed/dXkQuRXCKIk?rel=0"
+            title="LA-ICP-MS data reduction application demonstration"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <video class="local-demo" controls playsinline preload="metadata" data-local-src="assets/LAICPMS_GUI_Demo.mp4" aria-label="Demonstration of the LA-ICP-MS data reduction application">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-pad light-section">
+        <div class="contact-card reveal">
+          <div>
+            <p class="eyebrow section-title"><span></span> About the developer</p>
+            <p class="about-copy">
+              I am a PhD-trained quantitative geoscientist and Harvard postdoctoral researcher.
+              My work combines geochemistry, scientific modeling, and data analysis to solve
+              real-world problems.
+            </p>
+            <a class="button button-primary" href="mailto:myu@g.harvard.edu">Contact Mingzhen</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>LA-ICP-MS Data Reduction · A scientific software project by Mingzhen Yu<br /><span class="footer-credit">Website created with assistance from OpenAI Codex.</span></p>
+      <p>© <span data-year>2026</span> Mingzhen Yu</p>
+    </footer>
+  </body>
+</html>

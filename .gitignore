@@ -1,0 +1,12 @@
+.DS_Store
+
+# Large local preview media; the published site streams from YouTube.
+assets/LAICPMS_GUI_Demo.mp4
+assets/*.mov
+
+# Earlier sketch drafts retained locally for reference.
+assets/laicpms-data-flow-sketch.png
+assets/laicpms-data-flow-sketch-v2.png
+
+# Private working notes that are not part of the public portfolio.
+CONTENT_TODO.md

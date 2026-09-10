@@ -16,7 +16,7 @@ The application source code and laboratory data are private. This repository con
 - `index.html` — page content and structure
 - `styles.css` — responsive visual design
 - `script.js` — navigation, reveal behavior, and local-preview handling
-- `assets/laicpms-data-flow-sketch-v3.png` — scientific workflow illustration
+- `assets/laicpms-data-flow-sketch-v4.png` — scientific workflow illustration
 - `assets/favicon.svg` — browser icon
 
 The narrated demonstration is streamed from YouTube on the published website. A large local MP4 is intentionally excluded from GitHub through `.gitignore`.

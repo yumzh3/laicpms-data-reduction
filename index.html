@@ -21,7 +21,7 @@
         <span class="brand-mark" aria-hidden="true">MY</span>
         <span class="brand-copy">
           <strong>Mingzhen Yu</strong>
-          <small>Scientific software case study</small>
+          <small>Scientific software development</small>
         </span>
       </a>
 
@@ -41,108 +41,21 @@
     <main id="main">
       <section id="top" class="hero section-pad light-section">
         <div class="hero-copy reveal">
-          <p class="eyebrow section-title"><span></span> LA-ICP-MS data reduction</p>
+          <h1>LA-ICP-MS Data Reduction Application</h1>
           <p class="hero-lead">
             I designed and developed a cross-platform desktop application that converts raw
-            LA-ICP-MS count files into configurable, reviewable, and export-ready results. It has
-            processed approximately 20,000 analyses and has been used for all LA-ICP-MS data
-            reduction in the lab since 2024.
+            LA-ICP-MS count files into configurable, reviewable, and export-ready results. The
+            application has processed approximately 20,000 analyses and has supported all
+            LA-ICP-MS data reduction in the lab since 2024.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#demo">Watch the demonstration</a>
-          </div>
-        </div>
-
-        <div class="scientific-background reveal">
-          <img class="method-sketch" src="assets/laicpms-data-flow-sketch-v3.png" alt="Hand-drawn diagram showing how a rock sample is measured by laser ablation ICP-MS, reduced using calibration and customized correction steps, and converted into compositional data." />
-          <div class="abstract-lines">
-            <a href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1744752" target="_blank" rel="noreferrer">Yu, Chen, and Langmuir — AGU 2024 abstract</a>
-            <a href="https://goldschmidtabstracts.info/2018/402.pdf" target="_blank" rel="noreferrer">Chen and Langmuir — Goldschmidt 2018 abstract</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="challenge" class="challenge section-pad light-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow section-title"><span></span> 01 · The challenge</p>
-          <h2 class="challenge-tagline">A customized method had no customized software.</h2>
-        </div>
-        <div class="problem-list reveal">
-          <article>
-            <span>01</span>
-            <div><h3>Workflow mismatch</h3><p>Existing programs did not support the laboratory’s customized data-reduction method.</p></div>
-          </article>
-          <article>
-            <span>02</span>
-            <div><h3>Manual variability</h3><p>Manual processing took half a day to a full day, depending on the researcher’s familiarity and tools. It was also difficult to standardize across users and cumbersome to repeat.</p></div>
-          </article>
-          <article>
-            <span>03</span>
-            <div><h3>Maintenance cost</h3><p>External software development would have been expensive and harder to maintain as scientific requirements evolved.</p></div>
-          </article>
-        </div>
-      </section>
-
-      <section id="solution" class="solution section-pad light-section">
-        <div class="solution-copy reveal">
-          <p class="eyebrow section-title"><span></span> 02 · The solution</p>
-          <p>
-            I designed the interface, implemented the reduction logic, connected configuration to
-            visual quality checks, and packaged the program so researchers could run it on macOS
-            or Windows without installing Python.
-          </p>
-          <p>
-            The result is a flexible tool that makes analytical choices visible, produces
-            consistent outputs, and can be maintained and debugged directly as laboratory needs
-            change. A data reduction that previously required half a day to a full day now takes
-            approximately 2–5 minutes.
-          </p>
-          <p>
-            To verify the function of the program, I manually reduced several analytical batches
-            and compared the results with the application output. The results were identical, and
-            the comparison was independently checked by another member of the lab.
+          <p class="demo-intro">
+            The narrated walkthrough below demonstrates a complete reduction session, from data
+            import and calibration review to CSV export. For the clearest view of interface
+            details, use the full-screen control.
           </p>
         </div>
 
-        <div class="capability-grid">
-          <article class="reveal">
-            <div class="capability-head"><span>01</span><h3>Guided configuration</h3></div>
-            <p>Researchers select standards, internal standards, isotopes, and calculation options through the interface.</p>
-          </article>
-          <article class="reveal">
-            <div class="capability-head"><span>02</span><h3>Visual quality control</h3></div>
-            <p>Count-rate plots and calibration curves let users inspect data before accepting the final calculation.</p>
-          </article>
-          <article class="reveal">
-            <div class="capability-head"><span>03</span><h3>Reproducible output</h3></div>
-            <p>The same structured process is applied across analyses, with raw and final tables available for review and export.</p>
-          </article>
-          <article class="reveal">
-            <div class="capability-head"><span>04</span><h3>Cross-platform delivery</h3></div>
-            <p>The application is packaged for macOS and Windows so end users do not need a programming environment.</p>
-          </article>
-        </div>
-        <p class="solution-tech reveal">
-          The current application contains 2,844 lines of Python code and uses Tkinter, NumPy,
-          pandas, Matplotlib, SciPy, scikit-learn, Pillow, natsort, and adjustText. PyInstaller
-          packages the software as standalone macOS and Windows applications. The private source
-          code is available upon request.
-        </p>
-      </section>
-
-      <section id="demo" class="demo section-pad light-section">
-        <div class="demo-heading reveal">
-          <div class="section-heading">
-            <p class="eyebrow section-title"><span></span> 03 · Product demonstration</p>
-            <p class="demo-intro">
-              This narrated walkthrough follows a reduction session from data import through
-              calibration review and CSV export. Use the full-screen control for the clearest view
-              of interface details.
-            </p>
-          </div>
-        </div>
-
-        <div class="video-shell reveal">
+        <div id="demo" class="video-shell hero-video reveal">
           <div class="video-topline">
             <span><i></i> APPLICATION WALKTHROUGH</span>
             <span>Audio narration included</span>
@@ -160,12 +73,90 @@
             Your browser does not support embedded video.
           </video>
         </div>
+
+        <figure class="scientific-background reveal">
+          <figcaption>From Instrument Signal to Compositional Data</figcaption>
+          <img class="method-sketch" src="assets/laicpms-data-flow-sketch-v4.png" alt="Hand-drawn diagram showing how a rock sample is measured by laser ablation ICP-MS and converted into compositional data using calibration and customized corrections." />
+          <p class="abstract-lines">
+            <strong>Reference:</strong>
+            <a href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1744752" target="_blank" rel="noreferrer">Yu, Chen, &amp; Langmuir — AGU 2024 abstract</a>;
+            <a href="https://goldschmidtabstracts.info/2018/402.pdf" target="_blank" rel="noreferrer">Chen &amp; Langmuir — Goldschmidt 2018 abstract</a>
+          </p>
+        </figure>
+      </section>
+
+      <section id="challenge" class="challenge section-pad light-section">
+        <div class="section-heading reveal">
+          <h2 class="content-title">The Challenge</h2>
+          <p class="section-subtitle">Why this software was needed</p>
+        </div>
+        <div class="problem-list reveal">
+          <article>
+            <span>01</span>
+            <div><h3>Workflow mismatch</h3><p>Existing programs did not support the laboratory’s customized data-reduction method.</p></div>
+          </article>
+          <article>
+            <span>02</span>
+            <div><h3>Labor-intensive processing</h3><p>Manual processing took half a day to a full day, depending on the researcher’s familiarity and tools. It was also difficult to standardize across users and cumbersome to repeat.</p></div>
+          </article>
+          <article>
+            <span>03</span>
+            <div><h3>Maintenance cost</h3><p>External software development would have been expensive and harder to maintain as scientific requirements evolved.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="solution" class="solution section-pad light-section">
+        <div class="solution-copy reveal">
+          <h2 class="content-title">The Solution</h2>
+          <p>
+            I designed the interface, implemented the reduction logic, connected configuration to
+            visual quality checks, and packaged the program so researchers could run it on macOS
+            or Windows without installing Python.
+          </p>
+          <p>
+            The result is a flexible tool that makes analytical choices visible, produces
+            consistent outputs, and can be maintained and debugged directly as laboratory needs
+            change. <strong>A data reduction that previously required half a day to a full day now
+            takes approximately 2–5 minutes.</strong>
+          </p>
+          <p>
+            To verify the function of the program, I manually reduced several analytical batches
+            and compared the results with the application output. The results were identical, and
+            the comparison was independently checked by another member of the lab.
+          </p>
+          <p>
+            The current application contains 2,844 lines of Python code and uses Tkinter, NumPy,
+            pandas, Matplotlib, SciPy, scikit-learn, Pillow, natsort, and adjustText. PyInstaller
+            packages the software as standalone macOS and Windows applications. The private source
+            code is available upon request.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="reveal">
+            <div class="capability-head"><span>01</span><h3>Guided configuration</h3></div>
+            <p>Researchers select external standards, internal standards, isotopes, and calculation options through the interface.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>02</span><h3>Visual quality control</h3></div>
+            <p>Count-rate plots and calibration curves let users inspect data before accepting the final calculation.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>03</span><h3>Reproducible output</h3></div>
+            <p>The same structured process is applied across analyses, with raw and final tables available for review and export.</p>
+          </article>
+          <article class="reveal">
+            <div class="capability-head"><span>04</span><h3>Cross-platform delivery</h3></div>
+            <p>The application is packaged for macOS and Windows so end users do not need a programming environment.</p>
+          </article>
+        </div>
       </section>
 
       <section id="contact" class="contact section-pad light-section">
         <div class="contact-card reveal">
           <div>
-            <p class="eyebrow section-title"><span></span> About the developer</p>
+            <h2 class="content-title">About the Developer</h2>
             <p class="about-copy">
               I am a PhD-trained quantitative geoscientist and Harvard postdoctoral researcher.
               My work combines geochemistry, scientific modeling, and data analysis to solve
@@ -178,7 +169,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>LA-ICP-MS Data Reduction · A scientific software project by Mingzhen Yu<br /><span class="footer-credit">Website created with assistance from OpenAI Codex.</span></p>
+      <p>LA-ICP-MS Data Reduction · A scientific software project by Mingzhen Yu<br /><span class="footer-credit">Website content by Mingzhen Yu; layout and formatting refined with assistance from OpenAI Codex.</span></p>
       <p>© <span data-year>2026</span> Mingzhen Yu</p>
     </footer>
   </body>
